@@ -61,17 +61,25 @@ messages = messages_api.get_messages(key=response.key, skip=0, take=10)
 print(f"Retrieved {len(messages.messages)} messages")
 ```
 
-### 2. Run Examples
+### 2. Set Environment Variable
 
 ```bash
-# Run the comprehensive test script
-python test_all_endpoints.py
+# Windows
+set DEVINBOX_API_KEY=your-api-key-here
 
-# Run the simple usage example
-python example_usage.py
+# Linux/Mac
+export DEVINBOX_API_KEY=your-api-key-here
 ```
 
-Both scripts will prompt you for your API key securely.
+### 3. Run Examples
+
+```bash
+# Run the comprehensive test script (uses DEVINBOX_API_KEY env var)
+python test_all_endpoints.py
+
+# Run the simple usage example (prompts for API key)
+python example_usage.py
+```
 
 ## API Endpoints
 
@@ -189,6 +197,11 @@ configuration.api_key['ApiKey'] = "your-api-key-here"
 Run the comprehensive test to verify all endpoints:
 
 ```bash
+# Set your API key first
+set DEVINBOX_API_KEY=your-api-key-here  # Windows
+# export DEVINBOX_API_KEY=your-api-key-here  # Linux/Mac
+
+# Run the test
 python test_all_endpoints.py
 ```
 

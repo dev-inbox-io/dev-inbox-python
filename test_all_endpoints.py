@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 Comprehensive DevInbox API Test Script
-Tests all available endpoints with user-provided API key
+Tests all available endpoints using DEVINBOX_API_KEY environment variable
 """
 
 import sys
 import os
-import getpass
 
 # Add the current directory to Python path so we can import the client
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -25,18 +24,22 @@ except ImportError as e:
 
 
 def get_api_key():
-    """Get API key from user input"""
+    """Get API key from environment variable"""
     print("DevInbox API Test Script")
     print("=" * 50)
-    print("Please provide your DevInbox API key.")
-    print("You can find it in your DevInbox dashboard at https://devinbox.io")
-    print()
+    print("Getting API key from DEVINBOX_API_KEY environment variable...")
     
-    while True:
-        api_key = getpass.getpass("Enter your API key: ").strip()
-        if api_key:
-            return api_key
-        print("❌ API key cannot be empty. Please try again.")
+    api_key = os.getenv('DEVINBOX_API_KEY')
+    if not api_key:
+        print("❌ Error: DEVINBOX_API_KEY environment variable not found!")
+        print("\nPlease set the environment variable:")
+        print("  Windows: set DEVINBOX_API_KEY=your-api-key-here")
+        print("  Linux/Mac: export DEVINBOX_API_KEY=your-api-key-here")
+        print("\nYou can find your API key in your DevInbox dashboard at https://devinbox.io")
+        sys.exit(1)
+    
+    print(f"✅ API key found: {api_key[:8]}...")
+    return api_key
 
 
 def test_all_endpoints(api_key):
@@ -238,7 +241,7 @@ def print_summary(test_results):
 def main():
     """Main function"""
     try:
-        # Get API key from user
+        # Get API key from environment variable
         api_key = get_api_key()
         
         # Test all endpoints

@@ -46,19 +46,28 @@ cd C:\Source\ado\dev-inbox-clients\python\dev-inbox
 python install.py
 ```
 
-### 2. Test All Endpoints
+### 2. Set Environment Variable
+```bash
+# Windows
+set DEVINBOX_API_KEY=your-api-key-here
+
+# Linux/Mac
+export DEVINBOX_API_KEY=your-api-key-here
+```
+
+### 3. Test All Endpoints
 ```bash
 python test_all_endpoints.py
 ```
-*This will prompt you for your API key and test all endpoints*
+*This will use the DEVINBOX_API_KEY environment variable and test all endpoints*
 
-### 3. Try the Example
+### 4. Try the Example
 ```bash
 python example_usage.py
 ```
 *This will prompt you for your API key and show basic usage*
 
-### 4. Read Documentation
+### 5. Read Documentation
 ```bash
 # Open the README file
 CLIENT_README.md
