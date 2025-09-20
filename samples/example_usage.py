@@ -81,8 +81,7 @@ def send_email_via_smtp(mailbox_username, mailbox_password, to_email, send_html_
     print(f"\n📤 Sending email via SMTP to {to_email}...")
     
     # SMTP configuration as specified
-    # smtp_server = "smtp.devinbox.io"
-    smtp_server = "localhost"
+    smtp_server = "smtp.devinbox.io"    
     smtp_port = 9025
     smtp_username = mailbox_username
     smtp_password = mailbox_password
@@ -161,8 +160,7 @@ def main():
     
     # 1. Configure the API client
     configuration = Configuration(
-        # host="https://api.devinbox.io",
-        host="http://localhost:5062",
+        host="https://api.devinbox.io",        
     )
     configuration.api_key['ApiKey'] = api_key
     
