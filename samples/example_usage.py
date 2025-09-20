@@ -2,6 +2,35 @@
 """
 DevInbox Python Client - Complete Usage Example
 Demonstrates creating mailbox, sending email via SMTP, and receiving via API
+
+To run this sample you need to have a DevInbox account and API key.
+You can get it from your DevInbox dashboard at https://devinbox.io
+Once you have the API key, you can set it in the DEVINBOX_API_KEY environment variable.
+
+This script will create a temporary mailbox, send an email via SMTP, and receive it via API.
+It will also test template parsing with the 'onboarding' template.
+
+You need to create a template in your DevInbox dashboard with the name 'onboarding' and the following content:
+
+Body (pay attention to whitespaces):
+```
+    <html>
+    <body>
+        <h2>Hello {{ user_name }},</h2>
+        <p>This is a simple test message to verify email delivery.</p>
+        <p>If you receive this, the system is working correctly.</p>
+    </body>
+    </html>
+    
+```
+
+Subject:
+```
+Welcome {{ user_name }}!
+```
+
+Then you can run the sample using the following command:
+python example_usage.py
 """
 
 import sys
