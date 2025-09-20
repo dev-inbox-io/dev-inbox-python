@@ -18,9 +18,9 @@ Python 3.9+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+pip install git+https://github.com/dev-inbox-io/dev-inbox-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/dev-inbox-io/dev-inbox-python.git`)
 
 Then import the package:
 ```python
@@ -88,6 +88,10 @@ with devinbox_client.ApiClient(configuration) as api_client:
         print("Exception when calling MailboxesApi->create_mailbox: %s\n" % e)
 
 ```
+
+## Samples
+
+For a more in-depth usage example, please take a look at [Example Usage](https://github.com/dev-inbox-io/dev-inbox-python/blob/main/samples/example_usage.py)
 
 ## Documentation for API Endpoints
 
