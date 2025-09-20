@@ -82,7 +82,7 @@ def send_email_via_smtp(mailbox_username, mailbox_password, to_email, send_html_
     
     # SMTP configuration as specified
     smtp_server = "smtp.devinbox.io"    
-    smtp_port = 9025
+    smtp_port = 587
     smtp_username = mailbox_username
     smtp_password = mailbox_password
     
@@ -122,11 +122,11 @@ def send_email_via_smtp(mailbox_username, mailbox_password, to_email, send_html_
         server = smtplib.SMTP(smtp_server, smtp_port)
         
         # Enable debug output to see SMTP commands (helpful for troubleshooting)
-        server.set_debuglevel(1)
+        # server.set_debuglevel(1)
         
         # Start TLS
         print("   🔒 Starting TLS encryption...")
-        # server.starttls()
+        server.starttls()
         
         # Login
         print(f"   🔑 Authenticating as {smtp_username}...")
@@ -153,8 +153,7 @@ def main():
     """Main function demonstrating complete DevInbox workflow"""
     
     # Get API key from user
-    # api_key = get_api_key()
-    api_key = "69f7673b13394d89b42f0ceb8cde6f82"
+    api_key = get_api_key()
     
     print(f"\n🔧 Configuring API client with key: {api_key[:8]}...")
     
