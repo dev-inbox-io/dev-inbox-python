@@ -14,13 +14,13 @@ You need to create a template in your DevInbox dashboard with the name 'onboardi
 
 Body (pay attention to whitespaces):
 ```
-    <html>
-    <body>
-        <h2>Hello {{ user_name }},</h2>
-        <p>This is a simple test message to verify email delivery.</p>
-        <p>If you receive this, the system is working correctly.</p>
-    </body>
-    </html>
+<html>
+<body>
+    <h2>Hello {{ user_name }},</h2>
+    <p>This is a simple test message to verify email delivery.</p>
+    <p>If you receive this, the system is working correctly.</p>
+</body>
+</html>
     
 ```
 
@@ -95,13 +95,13 @@ If you receive this, the system is working correctly."""
 def create_test_html():
     """Create simple HTML content for testing"""
     return """
-    <html>
-    <body>
-        <h2>Hello John Doe,</h2>
-        <p>This is a simple test message to verify email delivery.</p>
-        <p>If you receive this, the system is working correctly.</p>
-    </body>
-    </html>
+<html>
+<body>
+    <h2>Hello John Doe,</h2>
+    <p>This is a simple test message to verify email delivery.</p>
+    <p>If you receive this, the system is working correctly.</p>
+</body>
+</html>
     """
 
 
