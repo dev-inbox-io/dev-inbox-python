@@ -4,6 +4,7 @@ if __import__("typing").TYPE_CHECKING:
     # import apis into api package
     from devinbox_client.api.mailboxes_api import MailboxesApi
     from devinbox_client.api.messages_api import MessagesApi
+    from devinbox_client.api.status_api import StatusApi
     
 else:
     from lazy_imports import LazyModule, as_package, load
@@ -14,6 +15,7 @@ else:
             """# import apis into api package
 from devinbox_client.api.mailboxes_api import MailboxesApi
 from devinbox_client.api.messages_api import MessagesApi
+from devinbox_client.api.status_api import StatusApi
 
 """,
             name=__name__,

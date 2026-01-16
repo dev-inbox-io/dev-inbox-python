@@ -1,6 +1,6 @@
 # devinbox_client.MessagesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:5062*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,6 @@ Retrieves the most recent message from the specified mailbox. Returns an error i
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -30,22 +29,12 @@ from devinbox_client.models.message_view_model import MessageViewModel
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
@@ -77,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -104,7 +93,6 @@ Retrieves the most recent message from the specified mailbox and parses it using
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -112,22 +100,12 @@ from devinbox_client.models.message_parsed_view_model import MessageParsedViewMo
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
@@ -161,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -188,7 +166,6 @@ Retrieves a specific message from the specified mailbox using its unique ID.
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -196,22 +173,12 @@ from devinbox_client.models.message_view_model import MessageViewModel
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
@@ -245,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -272,7 +239,6 @@ Returns the total number of messages in the specified mailbox.
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -280,22 +246,12 @@ from devinbox_client.models.message_count_result import MessageCountResult
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
@@ -327,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -354,7 +310,6 @@ Retrieves messages from the specified mailbox with optional pagination. Default:
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -362,30 +317,20 @@ from devinbox_client.models.messages_view_model import MessagesViewModel
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = devinbox_client.MessagesApi(api_client)
     key = 'key_example' # str | 
-    skip = 56 # int |  (optional)
-    take = 56 # int |  (optional)
+    skip = devinbox_client.GetMessagesSkipParameter() # GetMessagesSkipParameter |  (optional)
+    take = devinbox_client.GetMessagesSkipParameter() # GetMessagesSkipParameter |  (optional)
 
     try:
         # Get messages from a mailbox
@@ -404,8 +349,8 @@ with devinbox_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **str**|  | 
- **skip** | **int**|  | [optional] 
- **take** | **int**|  | [optional] 
+ **skip** | **GetMessagesSkipParameter**|  | [optional] 
+ **take** | **GetMessagesSkipParameter**|  | [optional] 
 
 ### Return type
 
@@ -413,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -440,7 +385,6 @@ Retrieves a single message from the specified mailbox. Returns an error if the m
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -448,22 +392,12 @@ from devinbox_client.models.message_view_model import MessageViewModel
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
@@ -495,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 
@@ -522,7 +456,6 @@ Retrieves a single message from the specified mailbox and parses it using the pr
 
 ### Example
 
-* Api Key Authentication (ApiKey):
 
 ```python
 import devinbox_client
@@ -530,22 +463,12 @@ from devinbox_client.models.message_parsed_view_model import MessageParsedViewMo
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:5062
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:5062"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: ApiKey
-configuration.api_key['ApiKey'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['ApiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with devinbox_client.ApiClient(configuration) as api_client:
@@ -579,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKey](../README.md#ApiKey)
+No authorization required
 
 ### HTTP request headers
 

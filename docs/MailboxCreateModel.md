@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | [optional] 
-**project_name** | **str** |  | [optional] 
+**name** | **str** | Optional name for the mailbox. If not provided, a temporary mailbox will be created. | [optional] 
+**project_name** | **str** | Name of the project to associate the mailbox with. If not provided, uses the default project. | [optional] 
+**is_temporary** | **bool** | Whether the mailbox should be temporary or persistent. | [optional] [default to True]
 
 ## Example
 

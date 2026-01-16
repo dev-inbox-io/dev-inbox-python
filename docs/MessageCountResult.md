@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** |  | [optional] 
-**count** | **int** |  | [optional] 
+**key** | **str** | Mailbox unique identifier | 
+**count** | [**MessageCountResultCount**](MessageCountResultCount.md) |  | 
 
 ## Example
 

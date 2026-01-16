@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** |  | [optional] 
-**count** | **int** |  | [optional] 
-**messages** | [**List[MessageViewModel]**](MessageViewModel.md) |  | [optional] 
+**key** | **str** | Mailbox unique identifier | 
+**count** | [**MessagesViewModelCount**](MessagesViewModelCount.md) |  | 
+**messages** | [**List[MessageViewModel]**](MessageViewModel.md) | Collection of message view models | 
 
 ## Example
 

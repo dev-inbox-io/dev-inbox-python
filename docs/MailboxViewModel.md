@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** |  | [optional] 
-**password** | **str** |  | [optional] 
+**key** | **str** | Unique identifier for the mailbox (&lt;key&gt;@devinbox.io) | 
+**password** | **str** | Password for accessing the mailbox (SMTP) | 
 
 ## Example
 

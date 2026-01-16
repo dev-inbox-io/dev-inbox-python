@@ -51,14 +51,15 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
+import os
 import devinbox_client
 from devinbox_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.devinbox.io
 # See configuration.py for a list of all supported configuration parameters.
 configuration = devinbox_client.Configuration(
-    host = "http://localhost"
+    host = "https://api.devinbox.io"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -95,7 +96,7 @@ For a more in-depth usage example, please take a look at [Example Usage](https:/
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.devinbox.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -107,17 +108,22 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**get_messages**](docs/MessagesApi.md#get_messages) | **GET** /messages/{key} | Get messages from a mailbox
 *MessagesApi* | [**get_single_message**](docs/MessagesApi.md#get_single_message) | **GET** /messages/{key}/single | Get single message from a mailbox
 *MessagesApi* | [**get_single_message_with_template**](docs/MessagesApi.md#get_single_message_with_template) | **GET** /messages/{key}/{template}/single | Get single message with template parsing
+*StatusApi* | [**get_status**](docs/StatusApi.md#get_status) | **GET** /status | Get API service status
 
 
 ## Documentation For Models
 
+ - [GetMessagesSkipParameter](docs/GetMessagesSkipParameter.md)
  - [MailboxCreateModel](docs/MailboxCreateModel.md)
  - [MailboxViewModel](docs/MailboxViewModel.md)
  - [MessageCountResult](docs/MessageCountResult.md)
+ - [MessageCountResultCount](docs/MessageCountResultCount.md)
  - [MessageParsedViewModel](docs/MessageParsedViewModel.md)
  - [MessageViewModel](docs/MessageViewModel.md)
  - [MessagesViewModel](docs/MessagesViewModel.md)
+ - [MessagesViewModelCount](docs/MessagesViewModelCount.md)
  - [ProblemDetails](docs/ProblemDetails.md)
+ - [ProblemDetailsStatus](docs/ProblemDetailsStatus.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -136,5 +142,7 @@ Authentication schemes defined for the API:
 ## Author
 
 support@devinbox.io
+
+
 
 

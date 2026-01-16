@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**status** | **int** |  | [optional] 
+**status** | [**ProblemDetailsStatus**](ProblemDetailsStatus.md) |  | [optional] 
 **detail** | **str** |  | [optional] 
 **instance** | **str** |  | [optional] 
 

@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unique_id** | **str** |  | [optional] 
-**var_from** | **List[str]** |  | [optional] 
-**to** | **List[str]** |  | [optional] 
-**cc** | **List[str]** |  | [optional] 
-**bcc** | **List[str]** |  | [optional] 
-**subject** | **str** |  | [optional] 
-**body** | **str** |  | [optional] 
-**is_html** | **bool** |  | [optional] 
-**received** | **datetime** |  | [optional] 
+**unique_id** | **str** | Unique identifier for the message | 
+**var_from** | **List[str]** | Array of sender email addresses | 
+**to** | **List[str]** | Array of recipient email addresses | 
+**cc** | **List[str]** | Array of CC email addresses | 
+**bcc** | **List[str]** | Array of BCC email addresses | 
+**subject** | **str** | Email subject line | 
+**body** | **str** | Email body content | 
+**is_html** | **bool** | Whether the email body is HTML format | 
+**received** | **datetime** | Timestamp when the message was received | 
 
 ## Example
 
