@@ -33,8 +33,8 @@ class MessageParsedViewModel(BaseModel):
     to: Optional[List[StrictStr]] = Field(description="Array of recipient email addresses")
     cc: Optional[List[StrictStr]] = Field(description="Array of CC email addresses")
     bcc: Optional[List[StrictStr]] = Field(description="Array of BCC email addresses")
-    subject: none_type[str, str] = Field(description="Parsed subject template parameters")
-    body: none_type[str, str] = Field(description="Parsed body template parameters")
+    subject: Optional[Dict[str, str]] = Field(description="Parsed subject template parameters")
+    body: Optional[Dict[str, str]] = Field(description="Parsed body template parameters")
     is_html: StrictBool = Field(description="Whether the email body is HTML format", alias="isHtml")
     received: datetime = Field(description="Timestamp when the message was received")
     __properties: ClassVar[List[str]] = ["uniqueId", "from", "to", "cc", "bcc", "subject", "body", "isHtml", "received"]
@@ -78,12 +78,8 @@ class MessageParsedViewModel(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of subject
-        if self.subject:
-            _dict['subject'] = self.subject.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of body
-        if self.body:
-            _dict['body'] = self.body.to_dict()
+        # subject is a Dict[str, str], no need to call to_dict()
+        # body is a Dict[str, str], no need to call to_dict()
         # set to None if var_from (nullable) is None
         # and model_fields_set contains the field
         if self.var_from is None and "var_from" in self.model_fields_set:
@@ -121,8 +117,8 @@ class MessageParsedViewModel(BaseModel):
             "to": obj.get("to"),
             "cc": obj.get("cc"),
             "bcc": obj.get("bcc"),
-            "subject": none_type[str, str].from_dict(obj["subject"]) if obj.get("subject") is not None else None,
-            "body": none_type[str, str].from_dict(obj["body"]) if obj.get("body") is not None else None,
+            "subject": obj.get("subject"),
+            "body": obj.get("body"),
             "isHtml": obj.get("isHtml"),
             "received": obj.get("received")
         })

@@ -190,10 +190,11 @@ def main():
     configuration = Configuration(
         host="https://api.devinbox.io",        
     )
-    configuration.api_key['ApiKey'] = api_key
     
-    # Create API client instance
+    # Create API client instance with default headers for API key
+    # Note: The OpenAPI spec doesn't define security requirements, so we need to set the header manually
     api_client = ApiClient(configuration)
+    api_client.default_headers['X-API-Key'] = api_key
     
     # Initialize API instances
     mailboxes_api = MailboxesApi(api_client)
@@ -228,10 +229,12 @@ def main():
         # 3. Check that the mailbox is empty
         print(f"\n📊 Checking that mailbox is empty...")
         count_response = messages_api.get_message_count(key=mailbox_key)
-        print(f"   ✅ Message count: {count_response.count}")
+        # The count field is a MessageCountResultCount object, access actual_instance for the value
+        count_value = count_response.count.actual_instance if hasattr(count_response.count, 'actual_instance') else count_response.count
+        print(f"   ✅ Message count: {count_value}")
         
         # Assert that mailbox is empty - this is critical for the test
-        assert count_response.count == 0, f"Mailbox is not empty! Expected 0 messages, got {count_response.count}. This is a critical error as we just created the mailbox."
+        assert count_value == 0, f"Mailbox is not empty! Expected 0 messages, got {count_value}. This is a critical error as we just created the mailbox."
         print("   ✅ Mailbox is empty as expected!")
         
         # 4. Send email to the mailbox via SMTP
@@ -249,10 +252,12 @@ def main():
         
         # Check message count again
         count_response_after = messages_api.get_message_count(key=mailbox_key)
-        print(f"   📊 Message count after sending: {count_response_after.count}")
+        # The count field is a MessageCountResultCount object, access actual_instance for the value
+        count_value_after = count_response_after.count.actual_instance if hasattr(count_response_after.count, 'actual_instance') else count_response_after.count
+        print(f"   📊 Message count after sending: {count_value_after}")
         
         # Assert that email was received (count should have increased)
-        assert count_response_after.count > count_response.count, f"Email was not received! Expected count > {count_response.count}, got {count_response_after.count}. This indicates SMTP or email processing issues."
+        assert count_value_after > count_value, f"Email was not received! Expected count > {count_value}, got {count_value_after}. This indicates SMTP or email processing issues."
         print("   ✅ Email was received successfully!")
         
         # Get the latest message
